@@ -4,7 +4,7 @@ Final Course Project
 Coursera Course: Getting and Cleaning Data  
 Due Date: Sunday May 25, 2014  
 by Charles Han  
-https://github.com/charleshan87/Getting_Cleaning_Data_Project  
+https://github.com/charleshan87/project  
 
 
 The generation of a tidy data set in this project utilizes collated data from a public repository at the following web address:
@@ -35,16 +35,16 @@ The validity of test design in terms of proper randomization, nor the evaluation
  
 Our primary aim is collect (get) and format (clean) the data to be suitable for statistical mean calculations and present the tidy data set that conforms to R coding conventions as discussed in the lectures. The results of the following steps were written to a text fomat file, called 'tidydata.txt'. 
 
-For readability, training and test data sets with all 561 features were renamed as 'x_train.txt' and 'x_test.txt' and they were read into R. It is assumed that these files appear in the same directory as where the script file, 'run_analysis.R' is launched. The 2 data frames are merged, placing the training group observations preceding the test group ones. The combined data set is saved as 'xtot'. This is step #1 in the instructions.
+Training and test X data sets with all 561 features,  'X_train.txt' and 'X_test.txt', were read into R. It is assumed that these files appear in the same directory as where the script file, 'run_analysis.R' is launched. The 2 data frames are merged, placing the training group observations preceding the test group ones. The combined data set is saved as 'xtot'. This is step #1 in the instructions.
 
 
 ```{r}
-xtrain <- read.table("x_train.txt")
-xtest <- read.table("x_test.txt")
+xtrain <- read.table("X_train.txt")
+xtest <- read.table("X_test.txt")
 xtot <- rbind(xtrain, xtest)
 ```
 
-The file that contains the feature vector variable names are read into R. When this file is read in, it is a 2 x 561 data frame consisting of a ordinal number column and sequence of names. 
+The file that contains the feature vector variable names are read into R. When this file is read in, it is a 2 x 561 data frame consisting of an ordinal number column and sequence of names. 
 
 First, any name that contains the string 'mean()' is extracted as a vector containing their column number index using the 'grep' function. Second, this procedure is repeated for any name that contains the string, 'std()'. These 2 vectors are combined as a single vector, 'index3'. Since this is a vector of integers and thus naturally placed in ascending order, it is used to extract the columns of data from the combined data set above, using the vector as the column indexes. This is step #2 in the instructions. 
 
