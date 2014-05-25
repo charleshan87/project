@@ -14,7 +14,7 @@ In the editing, the following points were taken into consideration:
 
 1) variable names should be in all lower case characters  
 2) abbreviated words were converted into full words  
-3) non-alphanumeric characters <<e.g.,  "( )" , "-" , "_" , " . " >> were removed  
+3) non-alphanumeric characters, e.g.,  '( )' , '-' , '_' , ' . ' were removed  
 
 Except for the first 2 columns ("subject" and "activity") which were the reshaping categories, the extracted features as column labels are as follows:
 
