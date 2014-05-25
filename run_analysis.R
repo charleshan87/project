@@ -95,3 +95,5 @@ d <- dcast(m, subject + activity~variable, mean)
 
 write.table(d, file = "tidydata.txt", append = FALSE, quote = FALSE, sep = " ", row.names = TRUE, col.names = TRUE)
 
+# End of File
+
