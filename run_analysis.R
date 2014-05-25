@@ -1,10 +1,10 @@
-# Please note the data txt file name changes for better readability
-# Refer to the README file for code comments
+
+# Refer to the README markdown file for further code comments
 
 # Read in data and merge
 
-xtrain <- read.table("x_train.txt")
-xtest <- read.table("x_test.txt")
+xtrain <- read.table("X_train.txt")
+xtest <- read.table("X_test.txt")
 xtot <- rbind(xtrain, xtest)
 
 # Clean up feature vector variable names
