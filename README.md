@@ -15,7 +15,7 @@ All of the raw and collated data along with a code book describing the variables
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-The original study collected activities data on 30 human subjects (in the age bracket of 19-48 years old) on pre-installed accelerometers and gyroscopes on Samsung Galaxy S2 phones. In the study, linear acceleration and angular velocity was captured in the x, y, and z-axis, at the collection rate of 50Hz. While the original study had the 
+The original study collected activities data on 30 human subjects (in the age bracket of 19-48 years old) on pre-installed accelerometers and gyroscopes on Samsung Galaxy S2 phones. In the study, linear acceleration and angular velocity were captured in the x, y, and z-axis, at the collection rate of 50Hz. While the original study had the 
 experimental goal of comparing 2 sets of subjects (70% of which were used as the training set and the remaining 30% as the test set), the class project here simply aims to examine the categorical means of 'feature' variables from a combined set of these 2 groups. Each feature variable represents a column in the numerical data set.
 
 Each subject was recorded performing the following six activities:
