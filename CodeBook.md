@@ -3,12 +3,12 @@ Code Book of Feature Vectors and Reshaping Variables
 
 The 561 feature vectors selected contain the tri-axial linear acceleration and angular momentum values in their original time domains as well as filtered transformations to remove noise, and calculated estimates of body and gravity acceleration signals. A complete description of these variables appear in the file, 'features_info.txt', in the orignal data packet, and is not a focus of this project.
 
-In step #1, 2 files containing the x data, effectively the captured numerical data and their transformations, with their column labels for the training and test subjects were combined. The merged data set was saved as a new data frame, 'xtot'. 
+In step #1, 2 files containing the X data, effectively the captured numerical data and their transformations, with their column labels for the training and test subjects were combined. The merged data set was saved as a new data frame, 'xtot'. 
 
-In step #2, among the features, columns containing the mean and the standard deviation of the captured data were located and extracted into a new data frame by indexing column numbers containing the strings, 'mean()' and 'std()'. A full description of the entire set of feature vector names and the strategy used in naming is available in the file, 'features.txt'.
+In step #2, among the features, columns containing the mean and the standard deviation of the captured data were located and extracted into a new data frame by indexing column numbers containing the strings, 'mean()' and 'std()'. The resulting subset is saved to the data frame, 'xclean'. A full description of the entire set of feature vector names and the strategy used in naming them is available in the file, 'features.txt' and 'features_info.txt'.
 
 
-In step #3, the following are the results of editing the variable labels from the original code book to conform to good R coding conventions as discussed in the lectures. No attempt was made to change the basic naming structure (i.e., number and sequence of words appearing in the feature names) since an accurate description of the original study's variables is not the focus of this course's final project. Also, instructions as given in the video lectures were followed, without regard to actual readability of the variable names, and merging of several words together, making individual words hard to distinguish was deliberate.
+The following list is the results of editing the variable labels from the original code book to those which conform to good R coding conventions as discussed in the lectures videos and notes. No attempt was made to change the basic naming structure (i.e., number and sequence of words appearing in the feature names) since an attempt to accurately describe the original study's experimental variables is not the focus of this course's final project. Also, instructions as given in the video lectures and notes were followed, without regard to the actual readability of the variable names; merging of several words together, making individual words hard to distinguish was deliberate.
 
 In the editing, the following points were taken into consideration:
 
@@ -100,13 +100,9 @@ Except for the first 2 columns ("subject" and "activity") which were the reshapi
 [80] "frequencybodybodygyrometermagnitudestandarddeviation"          
 [81] "frequencybodybodygyrometerjerkmagnitudestandarddeviation"    
 
-In the "subject" column, there are subject IDs from 1 through 30, 
-which were matched to the feature data by row order in a separate 
-file, 'subject_train.txt' and 'subject.test.txt'. These two files were read into R and merged before attaching as a new column in the combined x data set. 
 
-In the "activity" column, there are 6 different activities which 
-were coded from 1 through 6, matched to the row order provided in 
-a separate file, 'y_train.txt' and 'y_test.txt'. These 2 files were read into R and merged before processing. In step #4, combined vector was reverse coded from their numerical values back into their textual names as follows:
+In step #3, the 6 activity labels are matched to the numerical data by indexing and keeping track of the row order.
+The files, 'y_train.txt' and 'y_test.txt' are read into R and merged before processing. Once combined, the elements of the data frame are reverse coded from their numerical values back into their textual names as follows:
 
 1 = "walking"  
 2 = "walkingupstairs"  
@@ -115,11 +111,12 @@ a separate file, 'y_train.txt' and 'y_test.txt'. These 2 files were read into R 
 5 = "standing"  
 6 = "laying"  
 
-These activities labels, along with subject labels are attached to the combined x data set from above.
-
-In step #5, the final tidy data is created from reshaping and calculating the mean by using 'melt' and 'dcast' functions in the 'reshape2' package.
-
-The tidy data is written into a text format file, 'tidydata.txt'.
+This combined data frame was saved to 'tidy1'.
 
 
-A full description of the script which reads in the data sets and creating the new tidy data set is described in 'README.md'. 
+In step #4, the subject IDs are matched to the numerical data by indexing and keeping track of the row order. The files, 'subject_train.txt' and 'subject.test.txt' were read into R and merged before attaching as a new column in the combined X data set. The subject labels, the activity labels, and the numerical X data are combined and saved to the data frame, 'tidy2'.
+
+In step #5, the final tidy data is created from reshaping and calculating the mean by using 'melt' and 'dcast' functions in the 'reshape2' package. The tidy data is written into a text format file, 'tidydata.txt'.
+
+
+A full description of the script in a markdown file, which reads in the data set, subsets, edits, transforms, and finally writes the tidy data set into a text file is provided in 'README.md'. 
